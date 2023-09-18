@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Darek"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-16 09:37:35 PM"/>
+        <attribute name="created" value="RGFyZWs7REVTS1RPUC1NR0tOMFNBOzIwMjMtMDktMTY7MDk6MjY6NDcgUE07Mjg2Mg=="/>
+        <attribute name="edited" value="RGFyZWs7REVTS1RPUC1NR0tOMFNBOzIwMjMtMDktMTY7MDk6Mzc6MzUgUE07MTsyOTY5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FirstExamScore" type="Real" array="False" size=""/>
+            <declare name="SecondExamScore" type="Real" array="False" size=""/>
+            <declare name="TotalScore" type="Real" array="False" size=""/>
+            <input variable="FirstExamScore"/>
+            <input variable="SecondExamScore"/>
+            <assign variable="TotalScore" expression=".6*FirstExamScore + .4*SecondExamScore"/>
+            <output expression="&quot;The total score is &quot; &amp; TotalScore" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
