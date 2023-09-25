@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Darek"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-24 06:20:34 PM"/>
+        <attribute name="created" value="RGFyZWs7REVTS1RPUC1NR0tOMFNBOzIwMjMtMDktMjQ7MDY6MDI6MDYgUE07Mjg0Nw=="/>
+        <attribute name="edited" value="RGFyZWs7REVTS1RPUC1NR0tOMFNBOzIwMjMtMDktMjQ7MDY6MjA6MzQgUE07MTsyOTU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Qty" type="Real" array="False" size=""/>
+            <declare name="UnitPrice" type="Real" array="False" size=""/>
+            <declare name="ExtPrice" type="Real" array="False" size=""/>
+            <declare name="Tax" type="Real" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the quantity of an item:&quot;" newline="True"/>
+            <input variable="Qty"/>
+            <if expression="Qty&gt;=1000">
+                <then>
+                    <assign variable="UnitPrice" expression="3.00"/>
+                </then>
+                <else>
+                    <assign variable="UnitPrice" expression="5.00"/>
+                </else>
+            </if>
+            <assign variable="ExtPrice" expression="Qty * UnitPrice"/>
+            <assign variable="Tax" expression="ExtPrice * 0.07"/>
+            <assign variable="Total" expression="ExtPrice + Tax"/>
+            <output expression="&quot;Ordered quantity: &quot; &amp; Qty" newline="True"/>
+            <output expression="&quot;The price of the unit is $&quot; &amp; UnitPrice" newline="True"/>
+            <output expression="&quot;Extended price is $&quot; &amp; ExtPrice" newline="True"/>
+            <output expression="&quot;The tax is equal to $&quot; &amp; Tax" newline="True"/>
+            <output expression="&quot;The total cost is $&quot; &amp; Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
