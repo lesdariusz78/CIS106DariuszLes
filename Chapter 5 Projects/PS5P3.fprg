@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Darek"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-30 09:23:05 PM"/>
+        <attribute name="created" value="RGFyZWs7REVTS1RPUC1NR0tOMFNBOzIwMjMtMDktMzA7MDk6MDM6MTkgUE07Mjg1Mg=="/>
+        <attribute name="edited" value="RGFyZWs7REVTS1RPUC1NR0tOMFNBOzIwMjMtMDktMzA7MDk6MjM6MDUgUE07MTsyOTU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Principle" type="Real" array="False" size=""/>
+            <declare name="Maturity" type="Real" array="False" size=""/>
+            <declare name="IntRate" type="Real" array="False" size=""/>
+            <declare name="FirstYearInt" type="Real" array="False" size=""/>
+            <input variable="Principle"/>
+            <input variable="Maturity"/>
+            <if expression="Principle&gt;100000 AND Maturity==5">
+                <then>
+                    <assign variable="IntRate" expression="0.06"/>
+                </then>
+                <else>
+                    <if expression="Principle&gt;50000 AND Maturity==10">
+                        <then>
+                            <assign variable="IntRate" expression="0.05"/>
+                        </then>
+                        <else>
+                            <if expression="Principle&gt;50000 AND Maturity==5">
+                                <then>
+                                    <assign variable="IntRate" expression="0.04"/>
+                                </then>
+                                <else>
+                                    <assign variable="IntRate" expression="0.02"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="FirstYearInt" expression="IntRate * Principle"/>
+            <output expression="&quot;Your principle is $ &quot; &amp; Principle" newline="True"/>
+            <output expression="&quot;Your interest rate is &quot; &amp; IntRate" newline="True"/>
+            <output expression="&quot;Your interest amount for the first year is $ &quot; &amp; FirstYearInt" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
